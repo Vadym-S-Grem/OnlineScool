@@ -1,20 +1,20 @@
 package com.OnlineScool;
 
-import com.OnlineScool.models.Lectur;
+import com.OnlineScool.models.Lecture;
 
 public class Main {
     public static void main(String[] args) {
 
-        Lectur lectur1 = new Lectur("First Lectur");
-        lectur1.newLectur();
-        Lectur lectur2 = new Lectur("Second Lectur");
-        lectur2.newLectur();
-        Lectur lectur3 = new Lectur("Third Lectur");
-        lectur3.newLectur();
-        Lectur lectur4 = new Lectur("Fourt Lectur");
-        lectur4.newLectur();
-        Lectur lectur5 = new Lectur("Fifth Lectur");
-        lectur5.newLectur();
+        Lecture lecture1 = new Lecture("First Lecture");
+        lecture1.newLecture();
+        Lecture lecture2 = new Lecture("Second Lecture");
+        lecture2.newLecture();
+        Lecture lecture3 = new Lecture("Third Lecture");
+        lecture3.newLecture();
+        Lecture lecture4 = new Lecture("Fourth Lecture");
+        lecture4.newLecture();
+        Lecture lecture5 = new Lecture("Fifth Lecture");
+        lecture5.newLecture();
 
     }
 }
