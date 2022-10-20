@@ -11,6 +11,10 @@ public class Main {
         lectur2.newLectur();
         Lectur lectur3 = new Lectur("Third Lectur");
         lectur3.newLectur();
+        Lectur lectur4 = new Lectur("Fourt Lectur");
+        lectur4.newLectur();
+        Lectur lectur5 = new Lectur("Fifth Lectur");
+        lectur5.newLectur();
 
     }
 }
