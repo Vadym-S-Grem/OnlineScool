@@ -1,41 +1,69 @@
 package com.OnlineScool;
 
 import com.OnlineScool.models.Course;
-import com.OnlineScool.models.Lecture;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Course course1 = new Course();
-        Lecture lecture1 = new Lecture("First Lecture",1);
-//        course1.course_ID = lecture1.course_ID; !!!!!!!! Не працює. Не можу зрозуміти чому.!!!!!!!
-        lecture1.newLecture();
 
-        Course course2 = new Course();
-        Lecture lecture2 = new Lecture("Second Lecture", 2);
-//        course2.course_ID = lecture2.course_ID;
-        lecture2.newLecture();
+        System.out.println("————————————————————————————————————");
+        System.out.println("| Please enter the Category number |");
+        System.out.println("|----------------------------------|");
+        System.out.println("|  Course ----> 1 |  Teacher --> 2 |");
+        System.out.println("|  Student ---> 3 |  Lecture --> 4 |");
+        System.out.println("|----------------------------------|");
+        System.out.println("|     Exit the Program ----> 0     |");
+        System.out.println("|----------------------------------|");
 
-        Course course3 = new Course();
-        Lecture lecture3 = new Lecture("Third Lecture", 3);
-//        course3.course_ID = lecture3.course_ID;
-        lecture3.newLecture();
+        Scanner categorySelection = new Scanner(System.in);
 
-        Course course4 = new Course();
-        Lecture lecture4 = new Lecture("Fourth Lecture", 4);
-//        course4.course_ID = lecture4.course_ID;
-        lecture4.newLecture();
+        byte categoryNumber = categorySelection.nextByte();
 
-        Course course5 = new Course();
-        Lecture lecture5 = new Lecture("Fifth Lecture", 5);
-//        course5.course_ID = lecture5.course_ID;
-        lecture5.newLecture();
+        switch (categoryNumber) {
+            case 1:
+                Course course = new Course();
+                course.menuCourse();
+                break;
+            case 2:
+                System.out.println("|----------------------------------|");
+                System.out.println("| Selected category -----> Teacher |");
+                System.out.println("|----------------------------------|");
+                main(args);
+                break;
+            case 3:
+                System.out.println("|----------------------------------|");
+                System.out.println("| Selected category -----> Student |");
+                System.out.println("|----------------------------------|");
+                main(args);
+                break;
+            case 4:
+                System.out.println("|----------------------------------|");
+                System.out.println("| Selected category -----> Lecture |");
+                System.out.println("|----------------------------------|");
+                main(args);
+                break;
+            case 0:
+                categorySelection.close();
+                System.out.println("|----------------------------------|");
+                System.out.println("|    Exit the Program. Goodbye!    |");
+                System.out.println("————————————————————————————————————");
+                break;
+            default:
+                if ((categoryNumber >= -128 & categoryNumber <= 127) & (categoryNumber < 0 ^ categoryNumber > 4)) {
 
-        Course course6 = new Course();
-        Lecture lecture6 = new Lecture("Sixth Lecture", 6);
-//        course6.course_ID = lecture6.course_ID;
-        lecture6.newLecture();
-
-        lecture6.amount();
+                    System.out.println("|----------------------------------|");
+                    System.out.println("|   !!!   Incorrect number   !!!   |");
+                    System.out.println("|----------------------------------|");
+                    main(args);
+                } else {
+                    System.out.println("|----------------------------------|");
+                    System.out.println("|   !!!   Incorrect symbol   !!!   |");
+                    System.out.println("|----------------------------------|");
+                    main(args);
+                }
+                break;
+        }
     }
 }
