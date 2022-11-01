@@ -1,9 +1,5 @@
-package com.OnlineScool.models;
+package com.OnlineShcool.models;
 
-import com.OnlineScool.serviсes.CourseSrc;
-import com.OnlineScool.serviсes.LectureSrc;
-
-import javax.crypto.Cipher;
 import java.util.Scanner;
 
 public class Course {

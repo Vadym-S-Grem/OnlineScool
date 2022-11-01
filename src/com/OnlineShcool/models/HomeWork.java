@@ -1,4 +1,4 @@
-package com.OnlineScool.models;
+package com.OnlineShcool.models;
 
 public class HomeWork {
     private static int homeWork_ID;

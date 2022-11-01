@@ -1,8 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.Lecture;
-
-import java.util.Scanner;
+import com.OnlineShcool.models.Lecture;
 
 public class LectureSrc {
     LectureSrc lectureSrc = new LectureSrc();

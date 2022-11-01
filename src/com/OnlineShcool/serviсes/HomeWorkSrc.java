@@ -1,6 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.HomeWork;
+import com.OnlineShcool.models.HomeWork;
 
 public class HomeWorkSrc {
     HomeWorkSrc homeWorkSrc = new HomeWorkSrc();

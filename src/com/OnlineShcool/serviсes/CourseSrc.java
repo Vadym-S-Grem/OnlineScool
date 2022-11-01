@@ -1,6 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.Course;
+import com.OnlineShcool.models.Course;
 
 public class CourseSrc {
     CourseSrc courseSrc = new CourseSrc();

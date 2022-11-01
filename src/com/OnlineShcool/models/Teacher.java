@@ -1,4 +1,4 @@
-package com.OnlineScool.models;
+package com.OnlineShcool.models;
 
 public class Teacher {
     private static int teacher_ID;

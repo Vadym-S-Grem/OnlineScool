@@ -1,4 +1,4 @@
-package com.OnlineScool.models;
+package com.OnlineShcool.models;
 
 public class AdditionalMaterial {
     private static int additionalMaterial_ID;

@@ -1,6 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.Student;
+import com.OnlineShcool.models.Student;
 
 public class StudentSrc {
     StudentSrc studentSrc = new StudentSrc();

@@ -1,6 +1,6 @@
-package com.OnlineScool;
+package com.OnlineShcool;
 
-import com.OnlineScool.models.Course;
+import com.OnlineShcool.models.Course;
 
 import java.util.Scanner;
 

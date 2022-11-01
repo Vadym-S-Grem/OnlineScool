@@ -1,6 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.Teacher;
+import com.OnlineShcool.models.Teacher;
 
 public class TeacherSrc {
     TeacherSrc teacherSrc = new TeacherSrc();

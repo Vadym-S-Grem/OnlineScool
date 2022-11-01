@@ -1,6 +1,6 @@
-package com.OnlineScool.serviсes;
+package com.OnlineShcool.serviсes;
 
-import com.OnlineScool.models.AdditionalMaterial;
+import com.OnlineShcool.models.AdditionalMaterial;
 
 public class AdditionalMaterialSrc {
     AdditionalMaterialSrc additionalMaterialSrc = new AdditionalMaterialSrc();
