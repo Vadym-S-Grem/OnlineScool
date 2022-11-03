@@ -8,6 +8,7 @@ public class Lecture {
     private String lecture_Name;
     private String teacher_Name;
     public int course_ID;
+    public int lectureLimit = 8;
 
     public Lecture() {
 
@@ -28,27 +29,32 @@ public class Lecture {
     }
 
     public void createLecture() {
-        System.out.println("|----------------------------------|");
-        System.out.println("|  Enter the Title of the Lecture  |");
-        System.out.println("|----------------------------------|");
-        String lecture_Name = scannerLecture.next();
-        System.out.println("|----------------------------------|");
-        System.out.println("|    Enter the ID of the Course    |");
-        System.out.println("|----------------------------------|");
-        int course_ID = scannerLecture.nextInt();
-        Lecture lecture = newLecture(lecture_Name, course_ID);
-        System.out.println("|----------------------------------|");
-        System.out.println(lecture);
-        System.out.println("|----------------------------------|");
-        isNewLecture();
+            System.out.println("|----------------------------------|");
+            System.out.println("|  Enter the Title of the Lecture  |");
+            System.out.println("|----------------------------------|");
+            lecture_Name = scannerLecture.next();
+            System.out.println("|----------------------------------|");
+            System.out.println("|    Enter the ID of the Course    |");
+            System.out.println("|----------------------------------|");
+            course_ID = scannerLecture.nextInt();
+            Lecture lecture = newLecture(lecture_Name, course_ID);
+            System.out.println("|----------------------------------|");
+            System.out.println(lecture);
+            System.out.println("|----------------------------------|");
+            if (lecture_ID != lectureLimit) {
+                createNewLecture();
+            } else {
+                System.out.println("  Lecture limit reached ---> " + lectureLimit);
+                stopProgram();
+            }
     }
 
-    public void isNewLecture() {
+    public void createNewLecture() {
         System.out.println("  All lectures ---> " + lecture_ID);
         System.out.println("|        Create new lecture?       |");
         System.out.println("|   Yes ---> 1    |    No ---> 2   |");
         System.out.println("|----------------------------------|");
-        int yes = scannerLecture.nextInt();
+        byte yes = scannerLecture.nextByte();
         if (yes == 1) {
             createLecture();
         } else {
