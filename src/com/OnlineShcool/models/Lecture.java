@@ -1,9 +1,12 @@
 package com.OnlineShcool.models;
 
+import com.OnlineShcool.MethodMain;
+import com.OnlineShcool.repository.*;
 import java.util.Scanner;
 
 public class Lecture {
-    Scanner scannerLecture = new Scanner(System.in);
+    public static Scanner scannerLecture = new Scanner(System.in);
+
     private static int lecture_ID;
     private String lecture_Name;
     private String teacher_Name;
@@ -28,46 +31,82 @@ public class Lecture {
         return new Lecture(lecture_Name, course_ID);
     }
 
-    public void createLecture() {
-            System.out.println("|----------------------------------|");
-            System.out.println("|  Enter the Title of the Lecture  |");
-            System.out.println("|----------------------------------|");
-            lecture_Name = scannerLecture.next();
-            System.out.println("|----------------------------------|");
-            System.out.println("|    Enter the ID of the Course    |");
-            System.out.println("|----------------------------------|");
-            course_ID = scannerLecture.nextInt();
-            Lecture lecture = newLecture(lecture_Name, course_ID);
-            System.out.println("|----------------------------------|");
-            System.out.println(lecture);
-            System.out.println("|----------------------------------|");
-            if (lecture_ID != lectureLimit) {
-                createNewLecture();
-            } else {
-                System.out.println("  Lecture limit reached ---> " + lectureLimit);
-                stopProgram();
-            }
-    }
+    public void menuLecture() {
 
-    public void createNewLecture() {
-        System.out.println("  All lectures ---> " + lecture_ID);
-        System.out.println("|        Create new lecture?       |");
-        System.out.println("|   Yes ---> 1    |    No ---> 2   |");
-        System.out.println("|----------------------------------|");
-        byte yes = scannerLecture.nextByte();
-        if (yes == 1) {
-            createLecture();
-        } else {
-            stopProgram();
+        System.out.println("|---------------------------------------------------|");
+        System.out.println("|          Selected category...—> Lecture           |");
+        System.out.println("|---------------------------------------------------|");
+        System.out.println("|     Create a new ...    |        Function         |");
+        System.out.println("| Lecture............—> 1 | Show IDs...........—> 2 |");
+        System.out.println("| Main menu..........—> 9 | Search.............—> 3 |");
+        System.out.println("| Exit the Program...—> 0 | Delete.............—> 4 |");
+        System.out.println("|---------------------------------------------------|");
+
+        byte categoryNumberLecture = scannerLecture.nextByte();
+        switch (categoryNumberLecture) {
+            case 1:
+//                LectureRepo lectureRepo = new LectureRepo();
+//                lectureRepo.addLecture();
+                scannerLecture.close();
+                break;
+            case 2:
+                menuLecture();
+                scannerLecture.close();
+                break;
+            case 3:
+                menuLecture();
+                scannerLecture.close();
+                break;
+            case 4:
+                menuLecture();
+                scannerLecture.close();
+                break;
+            case 9:
+                MethodMain.startMenu();
+                scannerLecture.close();
+                break;
+            case 0:
+                MethodMain.stopProgram();
+                scannerLecture.close();
+                break;
+            default:
+                if ((categoryNumberLecture >= -128 & categoryNumberLecture <= 127) & (categoryNumberLecture < 0 ^ categoryNumberLecture > 4)) {
+
+                    System.out.println("|---------------------------------------------------|");
+                    System.out.println("|           !!!   Incorrect number   !!!            |");
+                    System.out.println("|---------------------------------------------------|");
+                    menuLecture();
+                } else if (categoryNumberLecture != 9) {
+                    System.out.println("|---------------------------------------------------|");
+                    System.out.println("|           !!!   Incorrect number   !!!            |");
+                    System.out.println("|---------------------------------------------------|");
+                    menuLecture();
+                } else {
+                    break;
+                }
         }
     }
 
-    public void stopProgram() {
-        scannerLecture.close();
-        System.out.println("|----------------------------------|");
-        System.out.println("|    Exit the Program. Goodbye!    |");
-        System.out.println("————————————————————————————————————");
-    }
+//    public void createLecture() {
+//            System.out.println("|----------------------------------|");
+//            System.out.println("|  Enter the Title of the Lecture  |");
+//            System.out.println("|----------------------------------|");
+//            lecture_Name = scannerLecture.next();
+//            System.out.println("|----------------------------------|");
+//            System.out.println("|    Enter the ID of the Course    |");
+//            System.out.println("|----------------------------------|");
+//            course_ID = scannerLecture.nextInt();
+//            Lecture lecture = newLecture(lecture_Name, course_ID);
+//            System.out.println("|----------------------------------|");
+//            System.out.println(lecture);
+//            System.out.println("|----------------------------------|");
+//            if (lecture_ID != lectureLimit) {
+//                createNewLecture();
+//            } else {
+//                System.out.println("  Lecture limit reached ---> " + lectureLimit);
+//                stopProgramLecture();
+//            }
+//    }
 
     @Override
     public String toString() {
